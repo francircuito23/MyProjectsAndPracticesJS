@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        window.onload = function(){
+        var f = document.querySelector("form");
+        var input = f.querySelectorAll("input");
+        
+        input[1].readOnly=true;
+        input[2].setAttribute("onclick","copiar()");
+        console.log(input);
+        
+
+       } 
+
+       function copiar(){
+            var f = document.querySelector("form");
+            var input = f.querySelectorAll("input");
+            var frase=input[0].value;
+            console.log(frase);
+            input[1].value=frase;
+       }
+
+
+    </script>
+<body>
+    <form>
+        <input type="text">
+        <input type="text">
+        <input type="button" value="copiar">
+    </form>
+</body>
+</html>

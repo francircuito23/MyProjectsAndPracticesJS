@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var f = document.querySelector("form");
+            var texto = document.querySelector("textarea");
+            var boton = document.querySelector("input");
+            //boton.setAttribute("onclick","pulsar()");
+            texto.setAttribute("maxlength",100);
+            var txt;
+            var cont = 1;
+
+            texto.onkeypress=function(){
+                if(cont<17){
+                    txt = texto.value;
+                    console.log(txt);
+                }
+                if(cont<100){
+                    var contador = document.getElementById("a");
+                    contador.textContent=cont+"/100";
+                }
+                cont++;
+            }  
+
+            boton.onclick=function(){
+                var cuerpo = document.querySelector("body");
+                var div = document.createElement("div");
+                var p = document.createElement("p");
+
+                p.textContent = txt;
+                txt="";
+                cont=0;
+                div.appendChild(p);
+                cuerpo.appendChild(div);
+
+                texto.value="";
+            }
+        }
+    </script>
+    <style>
+        div{
+            width: 300px;
+            height: auto;
+            border: 2px blue solid;
+            border-radius: 15px;
+            padding-left: 2px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <textarea name="mortadelo" id=""></textarea>
+        <p id="a">0/100</p>
+        <input type="button" name="culo" value="publicar">
+    </form> 
+</body>
+</html>

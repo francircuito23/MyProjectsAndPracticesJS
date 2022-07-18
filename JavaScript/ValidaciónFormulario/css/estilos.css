@@ -1,0 +1,50 @@
+
+body{
+    background-color:  #E8E1CC;
+    color: #63593A;
+    font-family: Arial,sans-serif;
+}
+
+form{
+    width: 830px;
+    margin: 1em auto;
+    display: flex;
+}
+
+.letras{
+    text-align: right;
+    padding-right: .35em;
+    width: 40%;
+}
+.centrados{
+    text-align: center;
+}
+
+.cabe{
+    text-align: center; 
+    background-color: #636058;
+    color: #E8E1CC;
+    height: 80px;
+}
+
+input[type='text'], input[type='password']{
+    width: 170px;
+}
+
+input[type='reset'], input[type='submit']{
+    padding: .25em;
+    width: 100px;
+}
+
+textarea{
+    height: 130px;
+    font-size: 0.95em;
+    font-family: monospace; 
+    resize: none;
+}
+
+table{
+    max-width: 400px;
+    min-width: 350px;
+    margin: 0 0.5em;
+}

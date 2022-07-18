@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var f = document.querySelector("form");
+            var input = f.querySelectorAll("input");
+            var span = document.querySelectorAll("span");
+            input[5].setAttribute("onclick","apuntar()");
+            console.log(input.length);
+            console.log(span.length);
+        }
+
+        function apuntar(){
+            var f = document.querySelector("form");
+            var input = f.querySelectorAll("input");
+            var span = document.querySelectorAll("span");
+            var texto = f.querySelector("textarea");
+
+            for(let i = 0;i<span.length;i++){
+                if(input[i].checked){
+                    texto.value+=span[i].innerText +", ";
+                }
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <form id="form">
+        <input type="checkbox" name="videojuegos" id=""><span>Videojuegis</span>
+        <br>
+        <input type="checkbox" name="cagar" id=""><span>Cagar</span>
+        <br>
+        <input type="checkbox" name="correr" id=""><span>salir a correr</span>
+        <br>
+        <input type="checkbox" name="traficar" id=""><span>traficar</span>
+        <br>
+        <input type="checkbox" name="leer" id=""><span>leer</span>
+        <br>
+        <textarea name="texto"></textarea>
+        <br>
+        <input type="button" value="ACEPTAR">
+    </form> 
+</body>
+</html>

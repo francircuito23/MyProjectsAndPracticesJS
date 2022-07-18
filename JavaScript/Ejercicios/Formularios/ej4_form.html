@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var f = document.querySelector("form");
+            var con = document.querySelectorAll("input");
+            con[2].setAttribute("onclick","convertir()");
+            con[5].setAttribute("onclick","convertir2()");
+        }
+
+        function convertir(){
+            var f = document.querySelector("form");
+            if(!isNaN(f.dolares.value)){
+                var dol = f.dolares.value;
+                var cal = dol*0.83;
+                f.euros.value=cal;
+            }
+            else{
+                alert("Introduce números");
+            }
+        }
+
+        function convertir2(){
+            var f = document.querySelector("form");
+            if(!isNaN(f.euros2.value)){
+                var eu = f.euros.value;
+                var cal = eu/0.83;
+                f.dolares2.value=cal;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form">
+        <input type="text" name="dolares" id="">
+        <input type="text" name="euros" id="">
+        <input type="button" value="Convertir">
+        <br>
+        <br>
+        <input type="text" name="euros2" id="">
+        <input type="text" name="dolares2" id="">
+        <input type="button" value="Convertir2">
+        
+    </form>
+</body>
+</html>

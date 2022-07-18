@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var f = document.querySelector("form");
+            var sel = document.querySelectorAll("select");
+            sel[0].setAttribute("onclick","marcar()");
+            sel[1].setAttribute("onclick","clicar()");
+
+        }
+
+        function marcar(){
+            var f = document.querySelector("form");
+            var sel = f.marcas.options.selectedIndex;
+            var padre = f.graficas;
+            while(padre.firstChild){
+                padre.removeChild(padre.firstChild);
+            } 
+            console.log(padre);
+            var ele1 = document.createElement("option");
+            var ele2 = document.createElement("option");
+            var ele3 = document.createElement("option");
+            if(sel==0){
+                ele1.textContent="HD 3000";
+                padre.appendChild(ele1);
+                ele2.textContent="HD 4000";
+                padre.appendChild(ele2);
+                ele3.textContent="IRIS 600";
+                padre.appendChild(ele3);
+            }
+            else if(sel==1){
+                ele1.textContent="RX Series 500";
+                padre.appendChild(ele1);
+                ele2.textContent="Vega Series";
+                padre.appendChild(ele2);
+                ele3.textContent="RX Series 6000";
+                padre.appendChild(ele3);
+            }
+            else{
+                ele1.textContent="GTX Serie 1000";
+                padre.appendChild(ele1);
+                ele2.textContent="GTX Serie 2000";
+                padre.appendChild(ele2);
+                ele3.textContent="GTX Serie 3000";
+                padre.appendChild(ele3);
+            }
+        }
+
+        function clicar(){
+            var f = document.querySelector("form");
+            var marca = f.marcas.options[f.marcas.selectedIndex].text;
+            var grafica = f.graficas.options[f.graficas.selectedIndex].text;
+
+            alert("has escogido la marca: "+marca+" de la serie "+ grafica);
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="">
+        <select name="marcas">
+            <option value="intel">Intel</option>
+            <option value="amd">AMD</option>
+            <option value="nvidia">Nvidia</option>
+        </select>
+        <select name="graficas" id=""></select>
+    </form>
+</body>
+</html>

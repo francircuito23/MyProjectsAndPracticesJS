@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="objetoLS.js"></script>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    form{
+        width: 12em; height: 10em;
+        padding: 2em;
+        border: 2px;
+        background-color: crimson;
+        border-radius: 12px;
+    }
+    form input[type=button] {
+        margin-left: 4em;
+        margin-top: 3em;
+    }
+    input[type=button] {
+       margin: 21px;
+    }
+    #salida{
+        width: 12em; height: 2em;
+        background-color: goldenrod;
+        border-radius: 25px;
+        color: aliceblue;
+        font-size: 1.25em;
+        margin: 21px;
+        padding: 2em;
+    }
+</style>
+<body>
+    <form>
+        <span>Nombre:</span> <input type="text"><br><br>
+        <span>Clave:</span> <input type="text">
+        <input type="button" value="Guardar">
+    </form>
+
+    <div id="salida"></div>
+    <input type="button" value="Borrar Datos">
+</body>
+</html>

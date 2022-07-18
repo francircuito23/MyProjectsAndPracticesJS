@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var boton = document.getElementById("pistacho");
+            console.log(boton);
+            boton.onclick=function(e){
+                e.preventDefault();
+                console.log("Enviando formulario...");
+                validar();
+            }
+        }
+
+        function validar(){
+            var f = document.getElementById("form");
+            var camponombre = f.nombre;
+            if((camponombre.value=="")||(camponombre.value.length==0)){
+                alert("El campo nombre no puede estar vacio");
+                //return;
+            }
+
+            var campoapellido = f.apellido;
+            if((campoapellido.value=="")||(campoapellido.value.length==0)){
+                alert("El campo apellido no puede estar vacio");
+            }
+            var letras = ["T","R","w","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+            //cojo el dni completo
+            var campodni = f.dni.value;
+            console.log(campodni);
+            
+            //lo divido 
+            var cortar = f.dni.value.split("");
+            console.log(cortar);
+            
+            //pillo la letra para comprobar
+            var cogerletra = cortar[8];
+            console.log(cogerletra);
+            
+            //se la quito
+            var quitarletra = cortar.pop();
+            
+            //lo uno y lo convierto en numero
+            var unir = parseInt(cortar.join(""));
+            console.log(unir);
+
+            var calculo = unir%23;
+            console.log(calculo);
+
+            if(cogerletra!=letras[calculo]){
+                alert("la letra es incorrecta");
+                campoapellido.focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form" action="">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" id="">
+        <br>
+        <br>
+        <label for="">Apellido</label>
+        <input type="text" name="apellido" id="">
+        <br>
+        <br>
+        <label for="">DNI</label>
+        <input type="text" name="dni" id="">
+        <br>
+        <br>
+        <label for="">email</label>
+        <input type="text" name="email" id="">
+    </form>
+    <br>
+    <input type="submit" id="pistacho" value="ENVIAR">
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>
+            <b>PULSA AQUÍ</b>
+        </p>
+    </div>
+</body>
+</html>
+
+<script>
+
+    window.onload=function(){
+        var b = document.querySelector("b").addEventListener("click", function(){
+            alert("Has clicado el elemento B");
+        }, false);
+
+        var p = document.querySelector("p").addEventListener("click", function(){
+            alert("Has clicado el elemento P");
+        }, false);
+
+        var d = document.querySelector("div").addEventListener("click", function(){
+            alert("Has clicado el DIV");
+        }, false);
+
+        /*b.addEventListener("click", function(){
+            alert("Soy B");
+        },true)
+
+        p.addEventListener("click", function(){
+            alert("Soy P");
+        },true)
+
+        d.addEventListener("click", function(){
+            alert("Soy DIV");
+        },true)*/
+    }
+    
+</script>

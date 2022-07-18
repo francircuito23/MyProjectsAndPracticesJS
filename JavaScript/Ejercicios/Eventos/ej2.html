@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .coordenadas{
+        width: 12em; height: 2em;
+        border: 2px solid black;
+        color: aliceblue;
+        background-color: crimson;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .botonIzq{
+        width: 12em; height: 2em;
+        background-color: yellowgreen;
+        /* border: 2px solid black; */
+        border: none;
+        margin-top: 100px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+</style>
+<body>
+    <div class="coordenadas">
+
+    </div>
+    <div class="botonIzq">
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var html = document.querySelector("html");
+
+    html.addEventListener("mousemove", function(e){
+        document.querySelector(".coordenadas").textContent = "X:"+e.screenX+" Y:"+e.screenY
+    });
+    
+    var botonIzq = document.querySelector(".botonIzq");
+
+    document.addEventListener("mouseup", function(e){
+
+        if(e.button == 0){
+            // botonIzq.style.border = "2px solid black";
+            // botonIzq.style.background = "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)";
+            botonIzq.textContent = "BOTÓN IZQUIERDO";
+        } 
+            
+        else if (e.button == 1) botonIzq.textContent = "BOTÓN CENTRAL";
+            
+        else botonIzq.textContent = "BOTÓN DERECHO";
+        
+    });
+
+    // document.addEventListener("mouseup", function(e){
+
+    //     if(e.button == 0) botonIzq.className = "botonIzq";
+            
+    //     else if (e.button == 1) alert("BOTON CENTRAL PULSADO");
+            
+    //     else alert("BOTON DERECHO PULSADO");
+        
+    // });
+
+</script>
